@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="d3/d3.min.js"></script>
+  <script type="text/javascript" src="Knuth.js"></script>
+  <script type="text/javascript" src="Tree.js"></script>
+</head>
+<body>
+<script >
+
+tree = new Tree([[1,-1],[2,1],[3,1],[4,2]]);
+console.log(tree.index);
+visualizeKnuth(tree);
+
+
+function visualizeKnuth(tree){
+  knuth_layout(tree);
+  function solve(node){
+    console.log(node.x);
+    console.log(node.y);
+    d3.select("body")
+      .append("svg")
+      .attr("width", 50)
+      .attr("height", 50)
+      .append("circle")
+      .attr("cx" , 10*node.x + 10)
+      .attr("cy", 10*node.y + 10)
+      .attr("r", 10)
+      .style("fill", "purple");
+    if(node.left !== null) solve(node.left);
+    if(node.right !== null) solve(node.right);
+  }
+  solve(tree);
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
