@@ -1,9 +1,8 @@
-function visualizeKnuth(tree, SIZE) {
-  knuth_layout(tree, SIZE);
+function draw(tree, SIZEOFCANVAS){
   var svgContainer = d3.select("body")
                          .append("svg")
-                         .attr("width", SIZE * 100)
-                         .attr("height", SIZE * 100)
+                         .attr("width", SIZEOFCANVAS )
+                         .attr("height", SIZEOFCANVAS )
                          .style("border", "1px solid black");
   function solve(node) {
     console.log(node.x);
@@ -11,7 +10,7 @@ function visualizeKnuth(tree, SIZE) {
     svgContainer.append("circle")
         .attr("cx", node.x )
         .attr("cy", node.y )
-        .attr("r", SIZE / 4)
+        .attr("r", 5)
         .style("fill", "purple");
     if (node.left !== null){
       svgContainer.append("line")
@@ -37,18 +36,4 @@ function visualizeKnuth(tree, SIZE) {
 
   }
   solve(tree);
-}
-
-function knuth_layout(Tree, SIZE) {
-  var i = 0;
-  function knuth_layout_solve(node, depth) {
-    if (node.left !== null)
-      knuth_layout_solve(node.left, depth + 1);
-    node.x = i;
-    node.y = depth * SIZE;
-    i += SIZE;//
-    if (node.right !== null)
-      knuth_layout_solve(node.right, depth + 1);
-  }
-  knuth_layout_solve(Tree, 0);
 }

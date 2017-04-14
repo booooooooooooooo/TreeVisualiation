@@ -5,10 +5,10 @@ format of data
 
 parentIndex of root is -1
 
-Note: the node appears first will be treated as left child 
+Note: the node appears first will be treated as left child
 */
 
-function Tree(data) {
+function makeTree(data) {
   // maintain  a temperary table to restore index-node map
   var table = {};
   // make Node

@@ -2,14 +2,19 @@
 <head>
   <title></title>
   <script type="text/javascript" src="d3/d3.min.js"></script>
-  <script type="text/javascript" src="Knuth.js"></script>
+  <script type="text/javascript" src="KnuthLayout.js"></script>
+
+  <script type="text/javascript" src="Draw.js"></script>
   <script type="text/javascript" src="Tree.js"></script>
 </head>
 <body>
 <script >
 
-tree = new Tree([[1,-1],[2,1],[3,1],[4,2],[5,2],[6,3],[7,3], [8,4], [9,4], [10,5],[11,5],[12,6],[13,6],[14,7],[15,7]]);
-visualizeKnuth(tree, 20);
+data = [[1,-1],[2,1],[3,1],[4,2],[5,2],[6, 3],[7,3], [8,4], [9,4], [10,5],[11,5],[12,6],[13,6],[14,7],[15,7]];
+
+knuthTree = knuthLayout( makeTree(data), 20);
+draw(knuthTree, 500);
+
 
 
 </script>
