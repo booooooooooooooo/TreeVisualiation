@@ -46,3 +46,8 @@ function Node(index, left = null, right = null, x = 0, y = 0) {
   this.x = x;
   this.y = y;
 }
+
+Node.prototype.getDepth = function () {
+  //TODO
+  return 6;
+};

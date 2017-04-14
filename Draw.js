@@ -5,8 +5,8 @@ function draw(tree, SIZEOFCANVAS){
                          .attr("height", SIZEOFCANVAS )
                          .style("border", "1px solid black");
   function solve(node) {
-    console.log(node.x);
-    console.log(node.y);
+    // console.log(node.x);
+    // console.log(node.y);
     svgContainer.append("circle")
         .attr("cx", node.x )
         .attr("cy", node.y )
