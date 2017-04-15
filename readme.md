@@ -3,7 +3,7 @@
 
 
 
-## Draw ordered tree with restrictions in linear time
+## 1.Draw ordered tree with restrictions in linear time
 
 Note: This part is just a review of https://llimllib.github.io/pymag-trees/ and the papers it refers to.
 
@@ -27,7 +27,7 @@ Note: This part is just a review of https://llimllib.github.io/pymag-trees/ and 
 
 
 
-## Draw unordered tree with restrictions.
+## 2.Draw unordered tree with restrictions.
 
 Note: Some restrictions may bring NP-complete problem. Try to find some heuristic methods.
 
