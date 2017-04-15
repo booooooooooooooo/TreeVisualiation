@@ -3,7 +3,7 @@ function draw(tree, SIZEOFCANVAS){
                          .append("svg")
                          .attr("width", SIZEOFCANVAS )
                          .attr("height", SIZEOFCANVAS )
-                         .style("border", "1px solid black");
+                         .style("border", "0px solid black");
   function solve(node) {
     // console.log(node.x);
     // console.log(node.y);

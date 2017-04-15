@@ -39,15 +39,25 @@ function makeTree(data) {
   }
 }
 
-function Node(index, left = null, right = null, x = 0, y = 0) {
+function Node(index, left = null, right = null, x = 0, y = 0, mod = 0) {
   this.index = index;
   this.left = left;
   this.right = right;
   this.x = x;
   this.y = y;
+  this.mod = mod;
 }
 
 Node.prototype.getDepth = function () {
-  //TODO
-  return 6;
+  var depth = 0;
+  function solve(node, tempDepth){
+    if(node === null){
+      depth = Math.max(depth, tempDepth);
+    }else{
+      solve(node.left, tempDepth + 1);
+      solve(node.right, tempDepth + 1);
+    }
+  }
+  solve(this, 0);
+  return depth;
 };
