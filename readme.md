@@ -1,11 +1,6 @@
 # Level-based Tree Visualization
 
-
-
-
-## 1.Draw ordered tree with restrictions in linear time
-
-Note: This part is just a review of https://llimllib.github.io/pymag-trees/ and the papers it refers to.
+Note: This is a JavaScript implementation of https://llimllib.github.io/pymag-trees/ and the papers it refers to.
 
 
 - Principle 1: The edges of the tree should not cross each other.
@@ -20,15 +15,6 @@ Note: This part is just a review of https://llimllib.github.io/pymag-trees/ and 
 * WetherellAndShannon1Layout.js: Principle 1,2,3; O(n)
 * WetherellAndShannon2Layout.js: Principle 1,2,3,4; O(n^2)
 * WetherellAndShannon3Layout.js: Principle 1,2,3,4; O(n)
+* ReingoldAndTilfordLayout.js: Principle 1,2,3,4,5; O(n^2)
 ##### TODO
 -ReingoldAndTilfordLayout.js: Principle 1,2,3,4,5; O(n)
-
-
-
-
-
-## 2.Draw unordered tree with restrictions.
-
-Note: Some restrictions may bring NP-complete problem. Try to find some heuristic methods.
-
-##### TODO
