@@ -1,4 +1,4 @@
-
+//O(n^2) time complexity
 function wetherellAndShannon2Layout(tree, SIZEOFEDGE) {
   var nexts = [];
   for(var i = 0; i < tree.getDepth(); i++){
@@ -30,8 +30,8 @@ function wetherellAndShannon2Layout(tree, SIZEOFEDGE) {
         }else{
           node.x = (node.left.x + node.right.x) / 2;
         }
-        if(node.x <= nexts[depth]){
-          move_right(node,  depth, nexts[depth] + SIZEOFEDGE - node.x);
+        if(node.x < nexts[depth]){
+          move_right(node,  depth, nexts[depth]  - node.x);
         }
         nexts[depth] = node.x + SIZEOFEDGE;
       }

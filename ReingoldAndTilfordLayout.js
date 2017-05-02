@@ -6,10 +6,10 @@ function reingoldAndTilfordLayout(tree, SIZEOFEDGE) {
       if(counter.length < level + 1){
         counter.push(node.x);
       }else{
-        if(leftOrRight == "left" && node.x < counter[level]){
+        if(leftOrRight === "left" && node.x < counter[level]){
           counter[level] = node.x;
         }
-        if(leftOrRight == "right" && node.x > counter[level]){
+        if(leftOrRight === "right" && node.x > counter[level]){
           counter[level] = node.x;
         }
       }
@@ -26,14 +26,18 @@ function reingoldAndTilfordLayout(tree, SIZEOFEDGE) {
       move_right(node.right, distance);
     }
   }
-  function getDistance(rightCounterForLeftSubTree, leftCounterForRightSubTree){
+  function getDistance(node){
+    rightCounterForLeftSubTree = getCounter(node.left, "right");
+    leftCounterForRightSubTree = getCounter(node.right, "left");
     var len = Math.min(rightCounterForLeftSubTree.length, leftCounterForRightSubTree.length);
-    var maxDistance = 0;
-    for(var i = 0; i < len; i++){
+    // var maxDistance = Number.MIN_VALUE;//wrong!
+    var maxDistance = rightCounterForLeftSubTree[0] - leftCounterForRightSubTree[0] + SIZEOFEDGE;
+    for(var i = 1; i < len; i++){
       var temp = rightCounterForLeftSubTree[i] - leftCounterForRightSubTree[i] + SIZEOFEDGE;
       maxDistance = Math.max(maxDistance, temp);
     }
-    return maxDistance;
+
+    return maxDistance;//maxDistance may be negative
   }
 
   function solve(node, level) {
@@ -48,9 +52,7 @@ function reingoldAndTilfordLayout(tree, SIZEOFEDGE) {
       }else if(node.right === null){
         node.x = node.left.x + SIZEOFEDGE / 2;
       }else{
-        rightCounterForLeftSubTree = getCounter(node.left, "right");
-        leftCounterForRightSubTree = getCounter(node.right, "left");
-        var distance = getDistance(rightCounterForLeftSubTree, leftCounterForRightSubTree);
+        var distance = getDistance(node);
         move_right(node.right, distance);
         node.x = (node.left.x + node.right.x) / 2;
       }

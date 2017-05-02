@@ -1,4 +1,4 @@
-
+//O(n) time complexity
 function wetherellAndShannon3Layout(tree, SIZEOFEDGE) {
   var nexts = [];
   for(var i = 0; i < tree.getDepth(); i++){
@@ -28,12 +28,16 @@ function wetherellAndShannon3Layout(tree, SIZEOFEDGE) {
         }else{
           node.x = (node.left.x + node.right.x) / 2;
         }
-        if(node.x <= nexts[depth]){
-          node.mod = nexts[depth] + SIZEOFEDGE - node.x;
-          node.x = nexts[depth] + SIZEOFEDGE;
+        if(node.x < nexts[depth]){
+          node.mod = nexts[depth] - node.x;
+          node.x = nexts[depth];
         }
       }
       nexts[depth] = node.x + SIZEOFEDGE;
+      //Caution: Adjust all nexts[] elements that are affected
+      for(var i = depth + 1; i < tree.getDepth(); i++){
+        nexts[i] += node.mod;
+      }
     }
   }
   solve(tree, 0);

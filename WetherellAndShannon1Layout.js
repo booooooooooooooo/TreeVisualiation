@@ -1,4 +1,4 @@
-
+//O(n) time complexity
 function wetherellAndShannon1Layout(tree, SIZEOFEDGE) {
   var nexts = [];
   for(var i = 0; i < tree.getDepth(); i++){
