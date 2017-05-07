@@ -1,20 +1,17 @@
-# Level-based Tree Visualization
-
-Note: This is a JavaScript implementation of https://llimllib.github.io/pymag-trees/ and the papers it refers to.
+Open draw.html in web browser to see the tree visualization.
 
 
-- Principle 1: The edges of the tree should not cross each other.
-- Principle 2: All nodes at the same depth should be drawn on the same horizontal line. This helps make clear the structure of the tree.
-- Principle 3: Trees should be drawn as narrowly as possible.
-- Principle 4: A parent should be centered over its children.
-- Principle 5: A subtree should be drawn the same no matter where in the tree it lies.
+
+draw.html - visualization
+draw.js - make html elements for visualization
+tree.js - make tree from given data
+knuthLayout.js - make coordinates using Knuth’s algorithm
+wsMinWidthLayout.js - make coordinates using Wetherell and Shannon’s Algorithm-Minimum Width algorithm
+wsCenterFastLayout.js - make coordinates using Wetherell and Shannon’s Algorithm-Parent Centered algorithm
+rtLayout.js - make coordinates using Reingold and Tilford’s Algorithm
 
 
-##### Done
-* KnuthLayout.js: Principle 1,2; O(n)
-* WetherellAndShannon1Layout.js: Principle 1,2,3; O(n)
-* WetherellAndShannon2Layout.js: Principle 1,2,3,4; O(n^2)
-* WetherellAndShannon3Layout.js: Principle 1,2,3,4; O(n)
-* ReingoldAndTilfordLayout.js: Principle 1,2,3,4,5; O(n^2)
-##### TODO
--ReingoldAndTilfordLayout.js: Principle 1,2,3,4,5; O(n)
+
+data= [ [1,-1], [2,1], [3,1],[4,2],[5,2],[6,3],[7,3],[8,4],[9,4],[10,7],[11,7],[12,8],[13,8],[14,11],[15,11],[16,12],[17,12],[18,15],[19,15],[20,17],[21,17],[22,18],[23,18],[24,21],[25,21],[26,22],[27,22],[28,25],[29,25],[30,26],[31,26]  ];
+
+[a,b] pair means the parent node of a is b. If b == -1, then a is root.

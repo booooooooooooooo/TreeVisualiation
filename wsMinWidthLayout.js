@@ -1,11 +1,10 @@
 //O(n) time complexity
-function wetherellAndShannon1Layout(tree, SIZEOFEDGE) {
+//post order traversal
+function wsMinWidthLayout(tree, SIZEOFEDGE) {
   var nexts = [];
   for(var i = 0; i < tree.getDepth(); i++){
     nexts.push(0);
   }
-  console.log(tree.getDepth());
-  console.log(nexts);
   function solve(node, depth) {
     if (node !== null){
       solve(node.left, depth + 1);

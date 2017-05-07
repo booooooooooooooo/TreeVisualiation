@@ -1,6 +1,7 @@
 //O(n^2) time complexity.
+//post order traversal
 
-function reingoldAndTilfordLayout(tree, SIZEOFEDGE) {
+function rtLayout(tree, SIZEOFEDGE) {
   function getCounter(node, leftOrRight, level = 0, counter = []){
     if(node !== null){
       if(counter.length < level + 1){

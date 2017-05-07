@@ -1,3 +1,5 @@
+//O(n)
+//In-order  traversal
 
 function knuthLayout(tree, SIZEOFEDGE) {
   var i = 0;

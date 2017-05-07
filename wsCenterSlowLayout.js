@@ -1,5 +1,5 @@
 //O(n^2) time complexity
-function wetherellAndShannon2Layout(tree, SIZEOFEDGE) {
+function wsCenterSlowLayout(tree, SIZEOFEDGE) {
   var nexts = [];
   for(var i = 0; i < tree.getDepth(); i++){
     nexts.push(0);
